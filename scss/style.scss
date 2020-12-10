@@ -1,0 +1,1001 @@
+
+
+$primary: #dc2d13;
+$secondary: #f4f4f4;
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #222;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+.expand {
+    padding: 0 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.marleft-15 {
+    margin-left: 15px;
+}
+
+
+.font-17 {
+    font-size: 17px;
+} 
+
+.section-gap {
+    padding: 80px 0;
+}
+
+.widget-container {
+    position: relative;
+    width: 100%;
+    height: 10px;
+}
+
+
+
+.widget-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgb(102,102,102) 0%, rgb(214,214,214) 0%);
+}
+
+.widget-slider::-moz-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #dc2d13;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+
+
+.droplist {
+    position: relative;
+
+    ul.listbox {
+        background: #222;
+        color: #dc2d13;
+    }
+}
+
+
+
+
+
+// APP SECTION
+
+.app-block {
+    margin-top: -40px;
+
+    h6, h2, p {
+        color: #fff;
+    }
+
+    h2 {
+        padding-bottom: 25px;
+    }
+    
+}
+
+.title {
+
+    h2 {
+        line-height: 1.5;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+        
+    }
+
+    small.sub-title {
+        color: rgb(153, 153, 153);
+        font-size: 14px;
+        font-style: italic;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+button#logout-btn {
+    background: none;
+    border: none;
+    display: block;
+    width: 100%;
+}
+
+// BOOKING BANNER 
+
+.booking-banner {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    background: url('../img/page-img.jpg') no-repeat center center/cover;
+    
+}
+
+
+
+/*========================================================================*\
+                                HEADER SECTION
+*\========================================================================*/
+
+
+.header-section {
+    position: absolute;
+    //height: 10vh; 
+    width: 100%;
+    z-index: 11500;
+    
+
+    .navbar {
+        padding: 0;
+        height: 100%;
+        border-bottom: 1px solid rgba($color: #fff, $alpha: 0.2);
+    }
+
+    a.nav-item.nav-link.active {
+        border-bottom: 2px solid $primary;
+        color: $primary;
+    }
+
+    a.nav-item.nav-link,
+    a.navbar-brand {
+        line-height: 80px;
+        color: #fff;
+    }
+}
+
+
+/*========================================================================*\
+                                BANNER SECTION
+*\========================================================================*/
+
+.banner-wrapper {
+    position: relative;
+    height: 85vh;
+    clip-path: polygon(0 0, 100% 0, 100% 44%, 100% 91%, 0 100%, 0 45%);
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: block;
+        background: rgba($color: #000000, $alpha: 0.3);
+        z-index: 4;
+    }
+
+    .banner-inner,
+    .banner-slide {
+        height: 100%;
+    }
+
+    .banner-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        transition: opacity 2s ease-in-out;
+    }
+
+    .banner-slide.active {
+        opacity: 1;
+        z-index: 5;
+    }
+
+    .banner-slide:nth-child(1) {
+        background: url('../img/cars/car-1.jpg') no-repeat center center / cover;
+        z-index: 3;
+    }
+
+    .banner-slide:nth-child(2) {
+        background: url('../img/cars/car-2.jpg') no-repeat center center / cover;
+        z-index: 2;
+    }
+
+    .banner-slide:nth-child(3) {
+        background: url('../img/cars/car-3.jpg') no-repeat center center / cover;
+        z-index: 1;
+    }
+
+    .banner-header {
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .banner-title {
+        color: #fff;
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 26px;
+            line-height: 1.2;
+        }
+    }
+
+    .locate-me {
+        position: absolute;
+        top: 55%;
+        right: 15px;
+        background: none;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .date-wrapper {
+        position: relative;
+    }
+
+    div.icon {
+        background: $primary;
+        text-align: center;
+        height: 100%;
+        line-height: 38px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        color: #fff;
+    }
+
+    .no-border {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        width: 100%;
+    }
+
+    .booking-wrapper {
+        color: #777;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 30px 0 rgba($color: #000000, $alpha: 0.05);
+    }
+
+    .booking-inner {
+        padding: 30px 35px;
+    }
+
+
+}
+
+/*========================================================================*\
+                                ABOUT SECTION
+*\========================================================================*/
+
+#about {
+
+    .about-image {
+        margin-bottom: 12px;
+    }
+
+    .about-customer {
+        position: relative;
+
+        h4 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15%;
+            height: 2px;
+            background: $primary;
+        }
+    }
+
+    .about-desc {
+        margin-top: 25px;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}
+
+/*========================================================================*\
+                                HOW-IT-WORK SECTION
+*\========================================================================*/
+
+#how-it-work {
+    position: relative;
+    background: url('../img/how-it-work.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.42);
+        
+    }
+
+    .how-desc {
+        font-size: 18px;
+        padding-top: 15px;
+        padding-left: 15px;
+        color: #fff;
+    }
+
+    .how-image img{
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+/*========================================================================*\
+                             RENTAL CARS SECTION
+*\========================================================================*/
+
+#rental-cars {
+
+    ul.car-item {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+
+        li {
+            position: relative;
+            flex: 0 0 50%;
+            margin-bottom: 5px;
+            font-size: 12px;
+
+            
+        }
+    }
+
+    ul.car-details {
+        margin-bottom: 10px;
+        border-bottom: 1px solid rgba($color: #000, $alpha: 0.14);
+
+        li {
+            flex: 0 0 20%;
+            font-size: 12px;
+            text-transform: capitalize;
+
+            i {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .car-desc {
+
+        h5 {
+            font-size: 14px;
+        }
+    }
+
+    a.btn-custom {
+        border: 1px solid #000;
+        border-radius: 3px;
+        padding: 8px 21px;
+        color: #000;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        transition: .25s ease-in-out;
+
+        &:hover {
+            border-color: $primary;
+            background: $primary;
+            color: #fff;
+        }
+    }
+
+    .slide-container {
+        position: relative;
+    }
+
+    .slider {
+        display: flex;
+
+    }
+
+    .slide-inner {
+        overflow: hidden;
+    }
+
+    .car-block {
+        flex: 0 0 33.3333333%;
+    }
+
+    .slide-btn {
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: none;
+        border: none;
+        line-height: 45px;
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+
+    .slide-btn.prev {
+        left: -34px;
+    }
+
+    .slide-btn.next {
+        right: -34px;
+    }
+}
+
+
+/*========================================================================*\
+                             SERVICE SECTION
+*\========================================================================*/
+
+#service {
+
+    .service-left {
+
+        h3 {
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        .service-block {
+            margin-bottom: 10px;
+
+            .service-icon {
+                flex: 0 0 10%;
+            }
+
+            .service-desc {
+                flex: 0 0 90%;
+
+                h5 {
+                    font-weight: 400;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    .service-right {
+        position: relative;
+
+        .service-img:nth-child(2),
+        .service-img:nth-child(3) {
+            position: absolute;
+            top: 0;
+        }
+
+        
+    }
+}
+
+
+
+/*========================================================================*\
+                                CALL US SECTION
+*\========================================================================*/
+
+#call-us {
+    position: relative;
+    background-image: url('../img/call-us-bg.jpeg');
+    background-size: cover;
+    background-position: center center;
+    font-size: 24px;
+    color: #fff;
+    background-attachment: fixed;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.4);
+    }
+
+    span.call-us-highlight {
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px;
+    }
+}
+
+
+/*========================================================================*\
+                                NEWS SECTION
+*\========================================================================*/
+
+#news {
+    padding-top: 80px;
+    padding-bottom: 160px;
+    
+
+    .blog-title__container {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 25px;
+            height: 3px;
+            background: $primary;
+
+        }
+    }
+
+    .blog-desc {
+        
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+
+
+/*========================================================================*\
+                                FOOTER SECTION
+*\========================================================================*/
+
+footer {
+    background: #1a1a1a;
+
+    .top-footer {
+        padding: 100px 0;
+
+        h4 {
+            padding-bottom: 25px;
+            color: #fff;
+            font-size: 17px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        p,
+        ul.footer-list a {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        ul.footer-list li {
+            margin-bottom: 10px;
+            
+        }
+    }
+
+    .bottom-footer {
+        background: #000;
+        color: #ccc;
+
+    }
+}
+
+
+
+
+
+
+
+
+/*========================================================================*\
+                                LOGIN SECTION
+*\========================================================================*/
+
+#main-login {
+    position: relative;
+    background-image: url('../img/login-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.35);
+    }
+
+    .login-wrapper {
+        padding: 35px;
+        background: #fff;
+        border-radius: 5px;
+    }
+}
+
+
+/*========================================================================*\
+                                ADMIN SECTION
+*\========================================================================*/
+
+#admin {
+
+    .admin-img {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        margin: 25px auto;
+    }
+
+    .tab-container {
+        padding: 70px 120px;
+    }
+}
+
+
+/*========================================================================*\
+                                BOOKING SECTION
+*\========================================================================*/
+
+.booking-main {
+
+    .book-area {
+        border: 1px solid #eee;
+        background: #f7f7f7;
+
+        .price-tag {
+            background: #222;
+            color: #fff;
+            
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+
+    ul.tab-list {
+
+        background: #eee;
+        width: 100%;
+
+        li {
+            display: inline-block;
+
+            a {
+                display: inline-block;
+                padding: 15px 25px;
+                font-size: 14px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: #000;
+                
+            }
+        }
+
+        
+    }
+
+    ul.tab-list li.active {
+        border-bottom: 2px solid $primary;
+        
+        a {
+            color: $primary;
+        }
+    }
+
+    ul.equipment-list {
+
+        li {
+            display: inline-block;
+            width: 30%;
+            font-size: 14px;
+            border-bottom: 1px dotted #eee;
+            padding: 15px 0;
+            margin-right: 1%;
+        }
+    }
+
+    .spec-details {
+        padding: 18px 24px;
+        border: 1px solid #eee;
+        
+        .detail-block {
+            border-bottom: 1px dotted #eee;
+            padding: 12px;
+            
+            dt,
+            dd {
+                display: inline-block;
+                font-size: 12px;
+                width: 50%;
+            }
+
+           
+
+            
+        }
+    }
+    
+    .tab-content {
+        display: none;
+
+        &:first-child {
+            display: block;
+        }
+    }
+
+    
+    
+}
+
+/*========================================================================*\
+                                LISTING SECTION
+*\========================================================================*/
+
+.listing-banner {
+    position: relative;
+    background: url('../img/page-img.jpg') no-repeat;
+    background-attachment: fixed;
+    height: 360px;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+}
+
+#main-block {
+
+    .sorting-container {
+        padding: 18px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sorting-item {
+
+        span {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-right: 15px;
+        }
+    
+        .select-current {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            //padding: 12px 21px;
+            width: 138px;
+            height: 45px;
+            border: 1px solid #eee;
+            text-align: center;
+            font-size: 12px;
+
+            span {
+                position: relative;
+                line-height: 45px;
+                z-index: -1;
+            }
+           
+        }
+
+        ul.select-options-1 {
+            position: absolute;
+            left: 126px;
+            display: none;
+            width: 138px;
+            z-index: 500;
+            background: #fff;
+
+
+            li {
+                border: 1px solid #eee;
+                
+                padding: 12px;
+                font-size: 12px;
+            }
+        }
+
+        
+        ul.select-options-2 {
+            position: absolute;
+            right: 336px;
+            display: none;
+            z-index: 500;
+            background: #fff;
+            width: 138px;
+
+
+            li {
+                border: 1px solid #eee;
+                
+                padding: 12px;
+                font-size: 12px;
+            }
+        }
+        
+        ul.select.active {
+            display: block;
+
+        }
+        
+
+    }
+
+   
+
+    .view-by button {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        background: none;
+        border: 1px solid #eee;
+    }
+
+    .upper-body h5 {
+        font-size: 14px;
+    }
+
+    .car-details li {
+        font-size: 14px;
+    }
+
+    ul.car-item  {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            flex: 0 0 50%;
+            font-size: 10px;
+            margin-bottom: 5px;
+        }
+        
+    }
+
+    .btn-custom {
+        border: 1px solid #222;
+        padding: 8px 21px;
+        border-radius: 3px;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+        transition: .25s;
+        color: #222;
+        
+        &:hover {
+            border-color: $primary;
+            background: $primary;
+            color: #fff;
+        }
+    }
+}
+
+
+/*========================================================================*\
+                                GUEST INFO SECTION
+*\========================================================================*/
+
+.details-wrapper {
+
+    label {
+        flex: 0 0 25%;
+        font-size: 14px;
+        color: #000;
+        text-align: right;
+        margin-right: 15px;
+    }
+
+    #sp {
+        flex: 0 0 12.5%;
+    }
+
+    input[type=text],
+    input[type=email],
+    select {
+        flex: 0 0 70%;
+        border-radius: 0;
+    }
+
+    textarea {
+        flex: 0 0 85%;
+        border-radius: 0;
+    }
+
+    button {
+        width: 140px;
+        margin: 20px 0;
+        border-radius: 0;
+
+    }
+
+    #submit-block {
+        margin-left: 137px;
+        
+    }
+}
+
+.blog-container {
+    position: relative;
+
+    .blog-inner {
+        overflow: hidden;
+    }
+
+    #blog-slider {
+        display: flex;
+
+        .blog {
+            flex: 0 0 33.33%;
+
+            .blog-post {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+
+}
+
+#next {
+    right: -30px;
+}
+
+#prev {
+    left: -55px;
+}
