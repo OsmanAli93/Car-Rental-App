@@ -1,12 +1,20 @@
 <?php
 
     class Database {
+        // Development Connection
+        // private $host = 'localhost';
+        // private $username = 'root';
+        // private $password = '123';
+        // private $dbName = 'car_rental';
+        // private $charset = 'utf8mb4';
 
-        private $host = 'localhost';
-        private $username = 'root';
-        private $password = '123';
-        private $dbName = 'car_rental';
+        // Remote Database Connection
+        private $host = 'us-cdbr-east-02.cleardb.com';
+        private $username = 'b04a19597212ac';
+        private $password = '2056759d';
+        private $dbName = 'heroku_064b05ad60fd38a';
         private $charset = 'utf8mb4';
+
 
         protected function establishConnection () {
 
